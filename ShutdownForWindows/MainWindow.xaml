@@ -7,33 +7,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShutdownForWindows"
         mc:Ignorable="d"
-        Title=" " Height="300" Width="400" Icon="/this-pc-computer-display-windows-11-icon.png">
+        Title=" " Height="550" Width="400" Icon="/this-pc-computer-display-windows-11-icon.png" StateChanged="MicaWindow_StateChanged">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="43*"/>
-            <RowDefinition Height="180*"/>
-            <RowDefinition Height="61*"/>
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Image Margin="0,10,0,0" Source="/Windows-11-Logo-White.png"  />
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="103*"/>
+            <RowDefinition Height="282*"/>
+            <RowDefinition Height="130*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.RowSpan="4" Panel.ZIndex="5">
+            <wpfui:Dialog x:Name="dialog" Foreground="#FF969696" />
         </Grid>
         <Grid Grid.Row="1">
-            <ListView Margin="0,10,0,0" SelectionChanged="ListView_Selected" x:Name="PowerOpt">
-                <ListViewItem Content="Lock" Foreground="#FFB3B3B3" HorizontalAlignment="Center" FontFamily="Segoe UI Variable Display" FontSize="24" FontWeight="Medium" Tag="0" IsSelected="False"/>
-                <ListViewItem Content="Switch User" Foreground="#FFB3B3B3" HorizontalAlignment="Center" FontFamily="Segoe UI Variable Display" FontSize="24" FontWeight="Medium" Tag="1" IsSelected="False"/>
-                <ListViewItem Content="Sign out" Foreground="#FFB3B3B3" HorizontalAlignment="Center" FontFamily="Segoe UI Variable Display" FontSize="24" FontWeight="Medium" Tag="2" IsSelected="False"/>
-                <ListViewItem Content="Task Manager" Foreground="#FFB3B3B3" HorizontalAlignment="Center" FontFamily="Segoe UI Variable Display" FontSize="24" FontWeight="Medium" Tag="3" IsSelected="False"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="79*"/>
+                <RowDefinition Height="24*"/>
+            </Grid.RowDefinitions>
+            <Image Margin="90,10,90,10" Source="/Windows-11-Logo-White.png"  />
+            <Grid Grid.Row="1">
+                <Label x:Name="OSVer" Content="Test" HorizontalContentAlignment="Center" Margin="0,-18,0,2" Height="40" Foreground="Gray" HorizontalAlignment="Center" Width="380"/>
+            </Grid>
+        </Grid>
+        <Grid Margin="0,40,0,40" Grid.Row="2">
+            <ListView Margin="0,30,0,30" SelectionChanged="ListView_Selected" x:Name="PowerOpt">
+                <ListViewItem x:Name="Locker"  Content="Lock" Foreground="#FFB3B3B3" HorizontalAlignment="Center" FontFamily="Segoe UI Variable Display" FontSize="17" FontWeight="Medium" Tag="0" IsSelected="False"/>
+                <ListViewItem Content="Switch User" Foreground="#FFB3B3B3" HorizontalAlignment="Center" FontFamily="Segoe UI Variable Display" FontSize="17" FontWeight="Medium" Tag="1" IsSelected="False"/>
+                <ListViewItem Content="Sign out" Foreground="#FFB3B3B3" HorizontalAlignment="Center" FontFamily="Segoe UI Variable Display" FontSize="17" FontWeight="Medium" Tag="2" IsSelected="False"/>
+                <ListViewItem Content="Task Manager" Foreground="#FFB3B3B3" HorizontalAlignment="Center" FontFamily="Segoe UI Variable Display" FontSize="17" FontWeight="Medium" Tag="3" IsSelected="False"/>
             </ListView>
         </Grid>
-        <Grid Grid.Row="2" Margin="0,1,0,0">
-            <wpfui:Button Appearance="Transparent" Width="32" Height="32" Padding="0" Margin="48,0,320,0" BorderBrush="Transparent">
+
+        <Grid Grid.Row="3">
+            <wpfui:Button Appearance="Transparent" Width="32" Height="32" Padding="0" Margin="48,0,320,0" BorderBrush="Transparent" Click="Button_Click">
                 <wpfui:FontIcon Glyph="&#xEC0A;" FontSize="24" Foreground="Orange"/>
             </wpfui:Button>
-            <wpfui:Button Appearance="Transparent" Width="32" Height="32" Padding="0" BorderBrush="Transparent">
+
+            <wpfui:Button Appearance="Transparent" Width="32" Height="32" Padding="0" BorderBrush="Transparent" Click="Button_Click_1">
                 <wpfui:FontIcon Glyph="&#xE7E8;" FontSize="24" Foreground="Red"/>
             </wpfui:Button>
-            <wpfui:Button Appearance="Transparent" Width="32" Height="32" Padding="0" Margin="317,0,51,0" BorderBrush="Transparent">
+            <wpfui:Button Appearance="Transparent" Width="32" Height="32" Padding="0" Margin="317,0,51,0" BorderBrush="Transparent" Click="Button_Click_2">
                 <wpfui:FontIcon Glyph="&#xE895;" FontSize="24" Foreground="Green"/>
             </wpfui:Button>
         </Grid>
