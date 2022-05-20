@@ -17,19 +17,25 @@
             <RowDefinition Height="130*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Grid.RowSpan="4" Panel.ZIndex="5">
-            <wpfui:Dialog x:Name="dialog" Foreground="#FF969696" />
+            <wpfui:Dialog x:Name="dialog" Foreground="#FF969696" >
+                <Grid/>
+            </wpfui:Dialog>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="79*"/>
-                <RowDefinition Height="24*"/>
+                <RowDefinition Height="54*"/>
             </Grid.RowDefinitions>
             <Image Margin="90,10,90,10" Source="/Windows-11-Logo-White.png"  />
             <Grid Grid.Row="1">
-                <Label x:Name="OSVer" Content="Test" HorizontalContentAlignment="Center" Height="20" Foreground="Gray" HorizontalAlignment="Left" Width="380" Margin="0,2,0,2"/>
-                <ComboBox x:Name="ThemeChanger" Width="200" Height="20" Margin="290,0,10,0" SelectionChanged="ThemeChanger_SelectionChanged">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="163*"/>
+                    <ColumnDefinition Width="87*"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="OSVer" Content="Test" HorizontalContentAlignment="Left" Margin="0,3,0,2" Foreground="Gray" FontSize="8" VerticalContentAlignment="Center" HorizontalAlignment="Center" Width="336"/>
+                <ComboBox x:Name="ThemeChanger" Height="30" Grid.Column="1" FontSize="10" Margin="5,0,5,0" SelectionChanged="ThemeChanger_SelectionChanged">
                     <ComboBoxItem Content="Choose Theme" IsSelected="True"/>
-                    <ComboBoxItem Content="Acrylic"/>
+                    <ComboBoxItem Content="Acrylic" />
                     <ComboBoxItem Content="Mica"/>
                     <ComboBoxItem Content="Tabbed"/>
                     <ComboBoxItem Content="Solid"/>
@@ -57,6 +63,7 @@
                 <wpfui:FontIcon Glyph="&#xE895;" FontSize="24" Foreground="Green"/>
             </wpfui:Button>
         </Grid>
+
 
     </Grid>
 </mica:MicaWindow>
