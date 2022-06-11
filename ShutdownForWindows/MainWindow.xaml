@@ -26,8 +26,8 @@
             </Grid.RowDefinitions>
             <Image Margin="90,10,90,10" Source="/Windows-11-Logo-White.png"  />
             <Grid Grid.Row="1">
-                <Label x:Name="OSVer" Content="Test" HorizontalContentAlignment="Center" Height="20" Foreground="Gray" HorizontalAlignment="Left" Width="380" Margin="0,2,0,2"/>
-                <ComboBox x:Name="ThemeChanger" Width="200" Height="20" Margin="290,0,10,0" SelectionChanged="ThemeChanger_SelectionChanged">
+                <Label x:Name="OSVer" Content="Test" HorizontalContentAlignment="Left" Height="20" Foreground="Gray" HorizontalAlignment="Left" Width="380" Margin="0,2,0,2"/>
+                <ComboBox x:Name="ThemeChanger" Width="200" Height="30" Margin="290,0,10,0" SelectionChanged="ThemeChanger_SelectionChanged">
                     <ComboBoxItem Content="Choose Theme" IsSelected="True"/>
                     <ComboBoxItem Content="Acrylic"/>
                     <ComboBoxItem Content="Mica"/>
